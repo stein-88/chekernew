@@ -4,14 +4,14 @@ import concat from 'gulp-concat'
 import uglify from 'gulp-uglify'
 import cleanCSS from 'gulp-clean-css'
 import del from 'del'
-import jsonlint from"gulp-jsonlint"
-import log from'fancy-log'
-import ohhtml from'gulp-htmllint'
-import colors from'ansi-colors'
-import wxmlmin from'gulp-wxml-min'
-import eslint from'gulp-eslint'
+import jsonlint from "gulp-jsonlint"
+import log from 'fancy-log'
+import ohhtml from 'gulp-htmllint'
+import colors from 'ansi-colors'
+import wxmlmin from 'gulp-wxml-min'
+import eslint from 'gulp-eslint'
 
-export const paths = {
+const paths = {
     js: {
         src: './filestocheck/jss/*.js',
         dest: './assets/scripts'
@@ -41,7 +41,7 @@ export const checkcss = () => {
         .pipe(gulp.dest(paths.css.dest))
 }
 
-export const myCustomReporter = (file) => {
+const myCustomReporter = (file) => {
     log('File ' + file.path + ' is not valid JSON.')
 }
 
@@ -52,7 +52,7 @@ export const checkjson = () => {
         .pipe(gulp.dest(paths.json.dest))
 }
 
-export const htmllintReporter = (filepath, issues) => {
+const htmllintReporter = (filepath, issues) => {
     if (issues.length > 0) {
         issues.forEach((issue) => {
             log(colors.cyan('[gulp-htmllint] ') + colors.white(filepath + ' [' + issue.line + ',' + issue.column + ']: ') + colors.red('(' + issue.code + ') ' + issue.msg))
