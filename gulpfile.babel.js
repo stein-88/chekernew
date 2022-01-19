@@ -13,7 +13,7 @@ import eslint from 'gulp-eslint'
 
 const paths = {
     js: {
-        src: './filestocheck/jss/*.js',
+        src: './filestocheck/scripts/*.js',
         dest: './assets/scripts'
     },
     json: {
@@ -21,11 +21,11 @@ const paths = {
         dest: './assets/scripts'
     },
     css: {
-        src: './filestocheck/csss/*.css',
+        src: './filestocheck/styles/*.css',
         dest: './assets/style'
     },
     html: {
-        src: './filestocheck/htmls/*.html',
+        src: './filestocheck/templates/*.html',
         dest: './assets'
     }
 }
